@@ -138,15 +138,15 @@ var player = {
   id: undefined,
   time: 100,
   ui: {
-    demo: document.querySelector("#demo"),
-    demo2: document.querySelector("#demo2")
+    demo: document.querySelector('#demo'),
+    demo2: document.querySelector('#demo2')
   },
   events: {
-    "#btnPause": "pause",
-    "#btnPlay": "play",
-    "#btnSlow": "slow",
-    "#btnNormal": "normal",
-    "#btnFast": "fast"
+    '#btnPause': 'pause',
+    '#btnPlay': 'play',
+    '#btnSlow': 'slow',
+    '#btnNormal': 'normal',
+    '#btnFast': 'fast'
   },
   n: 1,
   init: function init() {
@@ -177,6 +177,7 @@ var player = {
     player.ui.demo.scrollTop = player.ui.demo.scrollHeight;
   },
   play: function play() {
+    window.clearInterval(player.id);
     player.id = setInterval(player.run, player.time);
   },
   pause: function pause() {
@@ -227,7 +228,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54563" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59282" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
